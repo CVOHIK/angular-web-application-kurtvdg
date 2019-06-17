@@ -1,0 +1,34 @@
+<div class="row">
+  <div class="col-9">
+      <table id="dw_drinkfonteinen" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
+        <thead>
+          <tr>
+            <!-- <th class="th-sm">Ligging</th> -->
+            <th class="th-sm">Straatnaam</th>
+            <th class="th-sm">Huisnummer</th>
+            <th class="th-sm">District</th>
+            <th class="th-sm">Postcode</th>
+            <th class="th-sm">Aanvulling</th>
+            <th class="th-sm"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor='let item of _drinkFonteinen | paginate: { itemsPerPage: 10, currentPage: currentPage }; let i = index'>
+            <!-- <td>{{item.attributes.Ligging}}</td> -->
+            <td>{{item.attributes.Straatnaam}}</td>
+            <td>{{item.attributes.Huisnummer}}</td>
+            <td>{{item.attributes.District}}</td>
+            <td>{{item.attributes.Postcode}}</td>
+            <td>{{item.attributes.Aanvulling}}</td>
+            <td><img src="https://img.icons8.com/color/48/000000/google-maps.png" (click)="onClick(item)"></td>
+          </tr>
+        </tbody>
+        <pagination-controls (pageChange)="currentPage = $event"></pagination-controls>
+      </table>
+  </div>
+  <div class="col-3">
+      <agm-map [latitude]="latitude" [longitude]="longitude" [zoom]="14" >
+        <agm-marker [latitude]="latitude" [longitude]="longitude" ></agm-marker>
+      </agm-map>
+  </div>
+</div>

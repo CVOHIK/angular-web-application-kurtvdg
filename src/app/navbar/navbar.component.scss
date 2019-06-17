@@ -1,0 +1,25 @@
+.navbar{
+    background-color: #DB002A;
+}
+
+li a img{
+    width: 40px;
+}
+
+.nav>li>a{
+    color:black;
+}
+
+.nav>li>a:active{
+    background-color: rgb(197, 3, 42);
+    color: white;
+}
+
+.nav>li>a:visited{
+    background-color: rgb(197, 3, 42);
+}
+
+.nav>li>a:hover{
+    background-color: rgb(197, 3, 42);
+    color: white;
+}
